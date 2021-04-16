@@ -1,0 +1,461 @@
+@font-face {
+font-family: 'Whitney Semibold Regular';
+font-style: normal;
+font-weight: normal;
+src: local('Whitney Semibold Regular'), url('whitneysemibold.woff') format('woff');
+}
+@font-face {
+font-family: 'Whitney Medium';
+font-style: normal;
+font-weight: normal;
+src: local('Whitney Medium'), url('whitneymedium.woff') format('woff');
+}
+@font-face {
+font-family: 'Whitney Light Regular';
+font-style: normal;
+font-weight: normal;
+src: local('Whitney Light Regular'), url('whitneylight.woff') format('woff');
+}
+@font-face {
+font-family: 'Whitney Bold';
+font-style: normal;
+font-weight: normal;
+src: local('Whitney Bold'), url('whitneybold.woff') format('woff');
+}
+
+
+body {
+
+    background: transparent;
+    
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 12px 340px 12px;
+    grid-template-rows: 45px 1px 235px 40px;
+    gap: 0px 0px;
+    
+    
+    grid-template-areas:
+        ". title title title"
+        "line line line line"
+        ". messages messages ."
+        ". messageBox messageBox .";
+  }
+  .title { 
+    display: grid;
+    grid-template-columns: 35px 240px 100px;
+    grid-template-rows: 100%;
+    gap: 0px 0px;
+    grid-template-areas:
+    "logo channel openButton";
+    grid-area: title;
+    
+ }
+  .messageBox {
+    grid-area: messageBox;
+ }
+
+
+.messages {
+    position: relative;
+    grid-area: messages;
+    display: grid;
+    margin-bottom: 5px;
+    grid-template-rows: repeat(4);
+    overflow-y: auto;
+    --scrollbarBG: #2e3338;
+    --thumbBG: #202225;
+    scrollbar-width: thin ;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+
+}
+
+.messages::-webkit-scrollbar {
+    right: -30px;
+    position: fixed;
+    width: 11px;
+  }
+  .messages::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+  }
+  .messages::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG) ;
+    border-radius: 6px;
+    border: 3px solid var(--scrollbarBG);
+  }
+
+
+.username {
+    font-family:'Whitney Semibold Regular';
+    font-weight:normal;
+    font-size:16px;
+    margin-left: 8px;
+    height: 17px;
+    position: relative;
+    display: inline-block;
+}
+  
+
+.time {
+    font-family:'Whitney Light Regular';
+    font-weight:normal;
+    color: #72767d;
+    font-size:12px;
+}
+
+.msg-unit:hover {
+  background-color: #32353b;
+}
+
+.msg {
+    font-family:'Whitney Medium';
+    font-weight:normal;
+    font-size:14px;
+    color: #d1d1d2;
+    margin-right: 10px;
+    margin-left: 8px;
+    margin-bottom: .25rem;
+    overflow-wrap: anywhere;
+    position: relative;
+}
+.msg .imagePopup {
+    width: 120px;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 10px;
+    z-index: 2;
+    top: auto;
+    left: auto;
+  }
+
+  .imagePopup .image-Popup {
+    width: 120px;
+    border-radius: 7px;
+  }
+
+
+.space {
+    height: 5px;
+}
+
+
+.line {
+    grid-area: line;
+    border-top: 1px solid #202225;
+    margin-right: 2px;
+}
+
+.logo { 
+    grid-area: logo;
+ }
+.channel {
+    margin-left: 3px;
+    margin-top: 2px;
+    grid-area: channel;
+    -webkit-app-region: drag
+ }
+
+.button {
+    grid-area: openButton;
+    display: grid;
+    grid-template-columns: 27px 27px 27px 10px;
+    grid-template-rows: 16px;
+    gap: 0px 0px;
+    grid-template-areas:
+        "minimize open close .";
+ }
+
+ .drag {
+  -webkit-app-region: drag;
+  height: 30px;
+  width: 100px;
+  position: absolute;
+  top: 24px;
+ }
+
+.minimize,.open,.close {
+  height: 15px;
+  width: 27px;
+  font-family: 'Whitney Bold';
+  font-size: 12px;
+  padding: 0px;
+  text-align: center;
+  display: inline-block;
+  transition: .2s;
+  background-color: #4e525a;
+  border: none;
+  color: #313131;
+}
+.minimize {
+  grid-area: minimize;
+  border-bottom-left-radius:5px;
+}
+.open {
+  grid-area: open;
+}
+.close {
+  grid-area: close;
+  border-bottom-right-radius:5px;
+}
+.close:hover {
+  background-color: #a11a1a;
+}
+
+
+.frame {
+    width: 380px;
+    height: 335px;
+    background: #36393f;
+    border-radius: 15px;
+    z-index: 0;
+
+}
+.inputBox {
+    width: 100%;
+    height: 100%;
+}
+.inputBoxText {
+    font-size: 16px;
+    font-family:'Whitney Light Regular';
+    font-weight:normal;
+    color: #fff;
+    position: relative;
+    background: #40444b;
+    width: 100%;
+    height: 100%;
+    background-color: #40444b;
+    text-indent: 45px;
+    border-radius: 10px;
+}
+
+.upload {
+    background: #b9bbbe;
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin-left: 14px;
+    margin-top: 12px;
+    border-radius: 23px;
+    position:fixed;
+    z-index: 1;
+    text-align: center;
+    font-family:'Whitney Bold';
+    font-size: 17px;
+    color: #40444b;
+    border: none;
+    transition: .2s;
+}
+
+.upload:hover {
+    background-color: #dcddde;;
+  }
+.upload:focus{
+    outline: none;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+input {
+    border-style: hidden;
+    
+  }
+input::placeholder {
+    color: #66767d;;
+
+}
+
+.channel-icon{
+    margin-right: 20px;
+    z-index: 1;
+    position:fixed;
+}
+
+
+.wait_img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.bot {
+    height: 1rem;
+    margin-left: .25rem;
+    padding: 0 .275rem;
+    background-color: #7289da;
+    border-radius: .1875rem;
+    font-family:'Whitney Medium';
+    font-size: .625rem; color: #fff;
+}
+ 
+.open-discord {
+    margin-left: -3px;
+    margin-top: 6px;
+    height: 33px;
+    width: 33px;
+    background-color: #4e525a;
+    border: none;
+    color: #313131;
+    font-family: 'Whitney Bold';
+    font-size: 27px;
+    border-radius:7px;
+    padding: -2px;
+    text-align: center;
+    display: inline-block;
+    transition: .2s;
+  }
+  button:hover {
+    background-color: #5e626b;
+  }
+  
+  button:focus{
+      outline: none;
+  }
+  
+  a,b:link {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  a,b:visited {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  a,b:active {
+    text-decoration: none;
+  }
+
+  .upload:hover {
+    cursor: not-allowed;
+    text-decoration: none;
+  }
+
+
+.selection {
+  height: 85%;
+}
+
+.server_selection_bg{
+  width: 63px;
+    height: 98%;
+    background-color: #202225;
+    position: absolute;
+    border-bottom-left-radius: 10px;
+}
+
+.server_selection {
+  position: absolute;
+  float: left;
+  width: 163px;
+  height: 98%;
+  border-bottom-left-radius: 10px;
+  overflow-y: scroll;
+}
+
+.server_selection::-webkit-scrollbar {
+  display: none;
+}
+
+.channels_div {
+  overflow-y: scroll;
+  height: 98%;
+  width: 82%;
+  float: left;
+  left: 63px;
+  border-bottom-right-radius: 10px;
+  background-color: #2f3136;
+  position: absolute;
+}
+
+#server_logo{
+  margin: 8px 8px 8px;
+  width: 46px;
+  display: flex;
+  border-radius: 50%;
+  transition: 0.2s;
+  position: relative;
+}
+
+#server_logo:hover {
+  border-radius: 30%;
+  
+}
+
+.server_icon:hover ~ .server-title-popup {
+  opacity: 1;
+  visibility: visible;
+}
+
+.server_icon ~ .server-title-popup {
+  transition: all .1s ease-in-out;
+  visibility: hidden;
+
+  width: 80px;
+  background-color: #18191c;
+  color: #fff;
+  opacity: 0;
+  filter: drop-shadow(0 0 0.5rem rgb(34, 34, 34));
+  text-align: center;
+  margin-left: 70px;
+  margin-top: -43px;
+  border-radius: 6px;
+  padding: 4px 0;
+  position: absolute;
+  font-family: 'Whitney Medium';
+  font-size: 15px;
+  opacity: 0;
+  z-index: 1;
+}
+
+.channel_selection {
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+}
+
+.channel_item_bg {
+  height: 30px;
+  border-radius: 7px;
+}
+
+.channel_item {
+  margin-left: 30px;
+  font-family: 'Whitney Light Regular';
+  font-weight: bold;
+  position: relative;
+  top: 4px;
+}
+
+.channels_div::-webkit-scrollbar {
+  right: -30px;
+  position: fixed;
+  width: 11px;
+}
+.channels_div::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+  border-radius: 10px;
+}
+.channels_div::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG) ;
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
+}
+
+.channel_item_bg:hover {
+  background-color: #393c43;
+}
+
+.hashtag {
+  float: left;
+  margin-left: 8px;
+  color: #72767d;
+  font-family: 'Whitney Medium';
+  font-size: 23px;
+}

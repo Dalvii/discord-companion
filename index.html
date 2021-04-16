@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src='close.js'></script>
+
+    <meta charset="UTF-8">
+    <title>Discord Compagnion</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="frame">
+        <div class="grid-container">
+            <div class="title">
+                <div class="logo">
+                    <button class="open-discord" onclick="select_channel()">#</button>
+                </div>
+                <div class="channel" id="channel">
+                    <h1 class="channelText" id="channelText" style="font-family:'Whitney Semibold Regular';font-weight:normal;font-size:17px; color: white;">Channel non définie</h1>
+                </div>
+                <div class="button">
+                    <button class="minimize" onclick="minimise()">—</button>
+                    <button class="open" onclick="open_discord()">▣</button>
+                    <button class="close" onclick="closeApp()">X</button>
+                    <div class="drag"></div>
+                </div>
+            </div>
+            
+            <div class="line"></div>
+            <div class="messages" id="messages">
+                <div id="selection" class="selection" style="display:none">
+                    <div class="server_selection_bg"></div>
+                    <div id="server_selection" class="server_selection">
+                        </div>
+                    <div class="channels_div">
+                        <div id="channel_selection" class="channel_selection">
+
+                        </div>
+                    </div>
+                </div>
+                <img id="wait_img" class="wait_img" src="empty.svg"/>
+            
+            </div>
+            <div class="messageBox">
+                <div class="inputBox">
+                    <a button id="upload" class="upload" onclick="upload()">+</a>
+                    <input id="inputBoxText" oninput="typingIn()" class="inputBoxText" placeholder="Séléctionner le Channel"/>
+                </div>
+            </div>
+          </div>
+
+
+    </div>
+
+    <script>require('./close.js')</script>
+</body>
+</html>
+
